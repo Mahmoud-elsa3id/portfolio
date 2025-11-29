@@ -1,0 +1,91 @@
+/* small devices */
+@media (min-width:640px){
+.sm-100{
+    width: 100%;
+}
+.sm-50{
+width: 50%;
+}
+.sm-33{
+width: 33.33333%;
+}
+.sm-25{
+width: 25%;
+}
+.sm-20{
+width: 20%;
+}
+}
+/* mediem devices */
+@media screen and (min-width:768px){
+.md-100{
+    width: 100%;
+}
+.md-50{
+width: 50%;
+}
+.md-33{
+width: 33.33333%;
+}
+.md-25{
+width: 25%;
+}
+.md-20{
+width: 20%;
+}
+}
+/* lage devices */
+@media screen and (min-width:1024px){
+.ld-100{
+    width: 100%;
+}
+.ld-50{
+width: 50%;
+}
+.ld-33{
+width: 33.33333%;
+}
+.ld-25{
+width: 25%;
+}
+.ld-20{
+width: 20%;
+}
+}
+/* extra large devices */
+@media screen and (min-width:1280px){
+.xl-100{
+    width: 100%;
+}
+.xl-50{
+width: 50%;
+}
+.xl-33{
+width: 33.33333%;
+}
+.xl-25{
+width: 25%;
+}
+.xl-20{
+width: 20%;
+}
+}
+/* extra extra large devices */
+@media screen and (min-width:1536px){
+.xxl-100{
+    width: 100%;
+}
+.xxl-50{
+width: 50%;
+}
+.xxl-33{
+width: 33.33333%;
+}
+.xxl-25{
+width: 25%;
+}
+.xxl-20{
+width: 20%;
+}
+}
+

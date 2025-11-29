@@ -21,32 +21,34 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); 
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
-  
+
 /* <!--  nav bar  --> */
 
-.navbar{
-    background-color: #0d0219;
-position: fixed;
-top: 0;
-right: 0;
-left: 0;
-z-index: 999;
+.navbar {
+  background-color: #0d0219;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
 }
-.navbar .btn a{
-color: #321d50;
-text-decoration: none;
+
+.navbar .btn a {
+  color: #321d50;
+  text-decoration: none;
 }
-.btn a:hover{
+
+.btn a:hover {
   color: white;
 }
 
-    /* <!-- end of nav bar --> */
+/* <!-- end of nav bar --> */
 
 
-    /* <!-- hero section --> */
+/* <!-- hero section --> */
 
 
 .hero {
@@ -54,7 +56,7 @@ text-decoration: none;
   justify-content: space-between;
   align-items: center;
   padding: 80px 10%;
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .hero-content {
@@ -88,7 +90,8 @@ text-decoration: none;
 .buttons {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .btn {
@@ -111,7 +114,7 @@ text-decoration: none;
 
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .social-icons a {
@@ -132,45 +135,102 @@ text-decoration: none;
   transform: translateY(-3px);
 }
 
+.hero-image {
+  width: 300px;
+}
+
 .hero-image img {
-  width: 500px;
   border-radius: 20px;
   border: 2px solid #44138a;
   box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
-transform: rotate(-4deg);
-transition: transform .5s;
+  transform: rotate(-4deg);
+  transition: transform .5s;
 }
 
-.hero-image:hover img{
-transform: rotate(0deg);
+.hero-image:hover img {
+  transform: rotate(0deg);
   border: 2px solid #a05bff;
   box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
 }
-.stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  padding: 50px 10%;
-}
 
-.stats div {
+/* <!-- end of hero section --> */
+
+
+/* <!-- works -section --> */
+
+.works-section .works-section-text {
+    padding: 60px 60px 20px;
+
+}
+.works-section {
+padding-bottom: 70px;
   text-align: center;
+  background-color: #030008;
+  border-radius: 20px;
+  border: 2px solid #44138a;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
+
 }
 
-.stats h2 {
+.works-section h2 {
   font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.works-section h2 span {
+  color: #a362ea;
+}
+
+.works-section p {
+  color: #b3b3b3;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+
+.filter-buttons button {
+  background: #0b0b14;
+  border: none;
   color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.stats p {
-  font-size: 0.9rem;
-  color: #ccc;
+.filter-buttons button.active {
+  background: linear-gradient(90deg, #a362ea, #5b3ce2);
 }
 
-    /* <!-- end of hero section --> */
+.filter-buttons button:hover {
+  opacity: 0.85;
+}
 
-    /* <!-- skills section --> */
+.portfolio-card {
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid #995CE9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(101, 14, 194, 0.37);
+}
+
+.portfolio-card {}
+
+.prtofo{
+  margin:0 0 0 40px;
+}
+/* <!-- end of worrk section --> */
+
+
+/* <!-- skills section --> */
 
 
 .skills {
@@ -237,7 +297,9 @@ transform: rotate(0deg);
   color: #b47bff;
   font-weight: 500;
   font-size: 0.95rem;
-}.skills {
+}
+
+.skills {
   text-align: center;
   padding: 100px 20px;
 }
@@ -277,6 +339,8 @@ transform: rotate(0deg);
   text-align: center;
   transition: 0.3s ease;
   box-shadow: 0 0 10px rgba(180, 123, 255, 0.1);
+  border: 2px solid #2d0a5f;
+
 }
 
 .skill-box:hover {
@@ -302,19 +366,24 @@ transform: rotate(0deg);
   font-weight: 500;
   font-size: 0.95rem;
 }
+
 .buttons .social-icons a {
   text-decoration: none;
 }
-    /* <!-- end of skills section --> */
+
+/* <!-- end of skills section --> */
 
 
-    /* <!-- form section --> */
+/* <!-- form section --> */
 
 .contact-section {
-  padding: 100px 80px;
+  padding: 100px 15px;
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: #030008;
+  border-radius: 20px;
+  border: 2px solid #44138a;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
 }
 
 .contact-container {
@@ -363,7 +432,9 @@ form {
   flex: 1;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 12px;
   background: #0b0b14;
@@ -426,12 +497,83 @@ p {
   margin: 0;
   color: #ddd;
 }
-    /* <!-- end of the form --> */
+
+/* <!-- end of the form --> */
 
 
 
-    /* <!-- //// footer --> */
+/* <!-- //// footer --> */
 
-.footer-img img{
-    width: 80px;
+.footer-img img {
+  width: 80px;
 }
+
+@media screen and (min-width:768px){
+  .hero-image {
+  width: 700px;
+}
+
+.hero-image img {
+  border-radius: 20px;
+  border: 2px solid #44138a;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
+  transform: rotate(-4deg);
+  transition: transform .5s;
+}
+
+.hero-image:hover img {
+  transform: rotate(0deg);
+  border: 2px solid #a05bff;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
+}
+}
+
+ @media screen and (min-width:1024px){
+  .hero-image {
+  width: 600px;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.hero-image img {
+  border-radius: 20px;
+  border: 2px solid #44138a;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
+  transform: rotate(-4deg);
+  transition: transform .5s;
+}
+
+.hero-image:hover img {
+  transform: rotate(0deg);
+  border: 2px solid #a05bff;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
+}
+/* work */
+.filter-buttons button {
+  background: #0b0b14;
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+
+/* form */
+.contact-section {
+  padding: 100px 80px;
+  display: flex;
+  justify-content: center;
+  background-color: #030008;
+  border-radius: 20px;
+  border: 2px solid #44138a;
+  box-shadow: 0 0 25px rgba(160, 91, 255, 0.3);
+}
+
+ }
