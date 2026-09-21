@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #0b0f17;
+}
+
+/* ---------- Section ---------- */
+.tech-section {
+  --card-w: 168px;
+  --card-h: 176px;
+  --gap: 24px;
+  --speed: 45s; /* time for one full loop */
+
+  width: 100%;
+  padding: clamp(48px, 8vw, 96px) 0;
+  background: #0b0f17;
+  color: #e6edf3;
+  overflow: hidden; /* nothing can cause horizontal page scroll */
+}
+
+.tech-section__header {
+  max-width: 640px;
+  margin: 0 auto clamp(32px, 5vw, 56px);
+  padding: 0 20px;
+  text-align: center;
+}
+
+.tech-section__header h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tech-section__header p {
+  margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.6;
+  color: #8b98a9;
+}
+
+/* ---------- Slider viewport ---------- */
+.tech-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0; /* room for hover lift + glow */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* ---------- Track: holds two identical groups ---------- */
+.tech-slider__track {
+  display: flex;
+  width: max-content;
+  animation: tech-scroll var(--speed) linear infinite;
+  will-change: transform;
+}
+
+/* Pause when the user hovers the slider */
+.tech-slider:hover .tech-slider__track {
+  animation-play-state: paused;
+}
+
+/* padding-right = gap, so both groups have exactly the same width
+   and the loop has no jump */
+.tech-slider__group {
+  display: flex;
+  gap: var(--gap);
+  padding: 0 var(--gap) 0 0;
+  margin: 0;
+  list-style: none;
+  flex-shrink: 0;
+}
+
+.tech-slider__group li {
+  flex-shrink: 0;
+}
+
+/* Move exactly one group width (50% of the track) then restart */
+@keyframes tech-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Card ---------- */
+.tech-card {
+  --brand: #61dafb;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: var(--card-w);
+  height: var(--card-h);
+  padding: 16px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #151b28 0%, #0f141e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tech-card__icon {
+  font-size: 56px;
+  line-height: 1;
+  color: var(--brand);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-card__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f0f6fc;
+  text-align: center;
+}
+
+.tech-card__label {
+  font-size: 0.75rem;
+  color: #8b98a9;
+  text-align: center;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px) scale(1.06);
+  border-color: var(--brand);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.5),
+    0 0 26px -4px var(--brand);
+}
+
+.tech-card:hover .tech-card__icon {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px var(--brand));
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 991px) {
+  .tech-section {
+    --card-w: 148px;
+    --card-h: 158px;
+    --gap: 20px;
+    --speed: 38s;
+  }
+
+  .tech-card__icon {
+    font-size: 48px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 575px) {
+  .tech-section {
+    --card-w: 124px;
+    --card-h: 136px;
+    --gap: 14px;
+    --speed: 30s;
+  }
+
+  .tech-card {
+    border-radius: 16px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .tech-card__icon {
+    font-size: 40px;
+  }
+
+  .tech-card__name {
+    font-size: 0.875rem;
+  }
+
+  .tech-card__label {
+    font-size: 0.7rem;
+  }
+}
+
+/* ---------- Accessibility: respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .tech-slider__track {
+    animation: none;
+  }
+
+  .tech-slider {
+    overflow-x: auto;
+  }
+}

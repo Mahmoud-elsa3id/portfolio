@@ -8,7 +8,6 @@ const technologies = [
   { name: 'Git', label: 'Version Control', icon: 'devicon-git-plain', color: '#F05032' },
   { name: 'GitHub', label: 'Collaboration', icon: 'devicon-github-original', color: '#E6EDF3' },
   { name: 'JavaScript', label: 'Language', icon: 'devicon-javascript-plain', color: '#F7DF1E' },
-  ,
 ]
 
 const REPEAT = 2 // how many times the list repeats inside one group
